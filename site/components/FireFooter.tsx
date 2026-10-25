@@ -86,13 +86,21 @@ export default function FireFooter() {
               {hero.cta}
             </a>
             <ul className="ft-links">
-              {footer.links.map((l) => (
-                <li key={l}>
-                  <a href="#plating" className="ft-link">
-                    {l}
-                  </a>
-                </li>
-              ))}
+              {footer.links.map((l) => {
+                const href = l === "Instagram" ? "https://instagram.com" : l === "Gift a dinner" ? "#reserve" : "#plating";
+                const isExternal = l === "Instagram";
+                return (
+                  <li key={l}>
+                    <a
+                      href={href}
+                      className="ft-link"
+                      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    >
+                      {l}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <p className="ft-note">{footer.note}</p>

@@ -162,6 +162,23 @@ export default function ReserveTable() {
               </span>
             )}
           </div>
+
+          {s.held && (
+            <div className="bk-confirmed-banner">
+              <p className="bk-confirmed-text">
+                <span>✓ Reservation SS-{Math.abs(((s.day ?? 17) * 482) % 9000 + 1000)} Confirmed</span>
+                <br />
+                A chef tasting experience has been held for {s.guests} guest{s.guests > 1 ? "s" : ""} on {dayObj ? `${dayObj.dow} ${dayObj.d} Oct` : "your chosen date"} at {s.time}.
+              </p>
+              <button
+                type="button"
+                className="bk-modify-btn"
+                onClick={() => setS((o) => ({ ...o, held: false }))}
+              >
+                Modify selection
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </section>

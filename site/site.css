@@ -1398,4 +1398,291 @@ body {
   html.is-static .ft-glow {
     animation: none;
   }
+
+  /* ── Booking confirmation & interactive styles ───────────── */
+  .bk-confirmed-banner {
+    margin-top: 18px;
+    padding: 16px 20px;
+    background: rgba(244, 180, 26, 0.08);
+    border: 1px solid rgba(244, 180, 26, 0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .bk-confirmed-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--bone);
+  }
+  .bk-confirmed-text span {
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .bk-modify-btn {
+    align-self: flex-start;
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    font-family: var(--font-body-family), monospace;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s var(--ease-out);
+  }
+  .bk-modify-btn:hover {
+    color: var(--accent);
+  }
+
+  /* ── Responsive & Mobile Breakpoints ─────────────────────── */
+  @media (max-width: 1024px) {
+    .ss-bar {
+      padding: 20px 24px 0 24px;
+    }
+    .ss-wordmark {
+      font-size: 22px;
+    }
+    .ss-pill {
+      height: 38px;
+      padding: 0 16px;
+      font-size: 12px;
+    }
+    .ss-rail {
+      display: none; /* Hide edge course rail on tablets & phones to avoid obscuring content */
+    }
+
+    /* Loader */
+    .ember-words {
+      font-size: clamp(20px, 5.5vw, 36px);
+      letter-spacing: 0.15em;
+      gap: 0.5em;
+    }
+
+    /* Hero */
+    .hero-ticket {
+      position: absolute;
+      left: 24px;
+      top: 80px;
+      width: calc(100% - 48px);
+      max-width: 280px;
+      padding: 12px 16px;
+    }
+    .hero-ticket li {
+      font-size: 24px;
+    }
+    .hero-caption {
+      left: 24px;
+      top: auto;
+      bottom: 240px;
+      max-width: calc(100% - 48px);
+      font-size: clamp(22px, 5vw, 32px);
+    }
+    .hero-bottom {
+      inset: auto 24px 28px 24px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .hero-title {
+      font-size: clamp(48px, 11vw, 110px);
+    }
+    .hero-kicker {
+      font-size: clamp(20px, 4vw, 32px);
+    }
+    .hero-side {
+      align-items: flex-start;
+      text-align: left;
+      padding-bottom: 0;
+    }
+    .hero-price {
+      font-size: 36px;
+      margin-bottom: 4px;
+    }
+
+    /* Tasting Journey */
+    .tj-stage {
+      grid-template-columns: 1fr;
+      padding: 80px 24px 40px;
+      height: auto;
+      min-height: 100svh;
+      gap: 32px;
+    }
+    .tj-name {
+      font-size: clamp(26px, 5vw, 36px);
+    }
+    .tj-plate {
+      width: min(360px, 80vw);
+      margin: 0 auto;
+    }
+    .tj-next .tj-name {
+      font-size: 24px;
+    }
+
+    /* Tandoor Fire */
+    .fire-copy {
+      left: 24px;
+      width: calc(100% - 48px);
+      transform: translateY(-50%);
+    }
+    .fire-title {
+      font-size: clamp(42px, 9vw, 84px);
+    }
+    .fire-stats {
+      right: 24px;
+      bottom: 32px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .fire-stats > div {
+      padding: 10px 16px 0 0;
+    }
+    .fire-stats > div + div {
+      padding-left: 16px;
+    }
+    .fire-stats dd {
+      font-size: 36px;
+    }
+
+    /* Signature Dish */
+    .shank {
+      padding: 80px 24px 48px;
+      min-height: auto;
+    }
+    .shank-head {
+      grid-template-columns: 1fr;
+      text-align: left;
+      gap: 12px;
+    }
+    .shank-title {
+      font-size: clamp(42px, 8vw, 68px);
+      text-align: left;
+    }
+    .shank-sub {
+      justify-self: start;
+      font-size: 22px;
+    }
+    .shank-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .shank-pic {
+      min-height: 340px;
+      order: -1;
+    }
+    .shank-notes:last-child {
+      text-align: left;
+    }
+    .shank-note-title {
+      font-size: 28px;
+    }
+
+    /* Pairing */
+    .pr {
+      padding: 80px 24px 60px;
+    }
+    .pr-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .pr-title {
+      font-size: clamp(42px, 8vw, 68px);
+    }
+    .pr-rows li {
+      font-size: clamp(22px, 4.5vw, 32px);
+    }
+    .pr-pic {
+      width: 100%;
+      max-height: 380px;
+    }
+    .pr-price {
+      font-size: 36px;
+    }
+
+    /* Reservations */
+    .bk {
+      padding: 80px 24px 60px;
+      min-height: auto;
+    }
+    .bk-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .bk-title {
+      font-size: clamp(48px, 10vw, 84px);
+    }
+    .bk-days {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .bk-times {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .bk-ticket {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+    }
+    .bk-hold {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* Footer */
+    .ft {
+      min-height: auto;
+    }
+    .ft-grid {
+      grid-template-columns: 1fr;
+    }
+    .ft-pic {
+      min-height: 280px;
+      max-height: 360px;
+    }
+    .ft-info {
+      padding: 48px 24px 36px;
+      gap: 32px;
+    }
+    .ft-title {
+      font-size: clamp(42px, 8vw, 76px);
+    }
+    .ft-cols {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .ft-line {
+      font-size: 24px;
+    }
+    .ft-actions {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 20px;
+    }
+    .ft-actions .ss-btn {
+      width: 100%;
+      justify-content: center;
+    }
+    .ft-links {
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-caption {
+      display: none; /* Hide secondary decorative quote on very small mobile screens */
+    }
+    .pr-options {
+      grid-template-columns: 1fr;
+    }
+    .fire-stats {
+      grid-template-columns: 1fr 1fr;
+    }
+    .hero-ticket {
+      display: none; /* Focus on plating film and main title on small phone screens */
+    }
+  }
 }
+
